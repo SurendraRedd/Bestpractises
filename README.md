@@ -171,7 +171,7 @@ This project contains the sample files of the python best practises
 - 👉Best Practise 9 → **Using Ternary Opertor** - Ternary Opertor
 
     ```python
-        #Traditional
+    #Traditional
     value = True
     if value:
         v = 1
@@ -185,3 +185,19 @@ This project contains the sample files of the python best practises
     print(v)
     ```
 
+- 👉Best Practise 10 → **Using UnderScores** - UnderScores
+
+    ```python
+    #Traditional
+    val1 = 10000000000000000000000000000
+    val2 = 100000000000000
+    sum = val1 + val2
+    print(sum)
+
+    #Using underscores
+    val1 = 100_000_000_000_000_000_000_000_000_00
+    val2 = 100_000_000_000_000
+    sum = val1 + val2
+    print(sum) # output with out commas
+    print(f"{sum:,}")
+    ```
