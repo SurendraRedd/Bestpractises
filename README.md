@@ -167,3 +167,21 @@ This project contains the sample files of the python best practises
     else: 
         print("No Break")
     ```
+    
+- 👉Best Practise 9 → **Using Ternary Opertor** - Ternary Opertor
+
+    ```python
+        #Traditional
+    value = True
+    if value:
+        v = 1
+    else:
+        v = 0
+    print(v)
+
+    #Using ternary
+    value = True
+    v = 1 if value else 0
+    print(v)
+    ```
+
