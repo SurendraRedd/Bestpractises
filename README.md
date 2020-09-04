@@ -201,3 +201,33 @@ This project contains the sample files of the python best practises
     print(sum) # output with out commas
     print(f"{sum:,}")
     ```
+
+- 👉Best Practise 11 → **Using File Operations** - File Operations
+
+    ```python
+    #Traditional
+    f = open('one.txt', r)
+    contents = f.read()
+    f.close()
+    words = file_contents.split(' ')
+    word_count = len(words)
+    print(word_count)
+
+    #Using Context Managers
+    with open('test.txt', 'r') as f:
+        file_contents = f.read()
+    words = file_contents.split(' ')
+    word_count = len(words)
+    print(word_count)
+    ```
+    
+- 👉Best Practise 12 → **Using Loop Two Lists At Once** - Loop Two Lists At Once
+
+    ```python
+    #Traditional
+    list1 = ['python','java','c++','c','ruby','php']
+    list2 = ['static','dynamic','easy','difficult']
+    for index, val in enumerate(list1):
+        state = list2[index]
+        print(f'{val} is actually {state}')
+    ```    
