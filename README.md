@@ -231,3 +231,144 @@ This project contains the sample files of the python best practises
         state = list2[index]
         print(f'{val} is actually {state}')
     ```    
+
+- 👉Best Practise 13 → Accept Multiple Inputs, remove duplicates, call by reference..etc
+
+    ```python
+    # Tip1: Accept Multiple Inputs
+
+    # Traditional Approach
+
+    x = input("Enter Any Number: ")
+    print(x)
+
+    y = input("Enter Any Number: ") 
+    print(y)
+
+    z = input("Enter Any Number: ") 
+    print(z)
+
+    t = input("Enter Any Number: ") 
+    print(t)
+
+    p = input("Enter Any Number: ") 
+    print(p)
+
+    # Pythonic way
+    x,y,z,t,p = input("Enter Any Number: ").split(' ')
+    print(x,y,z,t,p)
+
+    # Tip2: Multi Condition Check
+
+    salary = 40000
+    age = 25
+    weight = 70
+
+    # Traditional Approach
+
+    if salary > 20000 and age > 20 and weight > 65:         
+    	print ("All conditions satisfied")
+
+    if salary > 20000 or age > 20 or weight > 65:
+    	print ("Any one condition is satisfied")
+
+    # Pythonic way using list
+
+    check = [
+    	salary > 20000,
+    	age > 20,
+    	weight > 65
+    ]
+
+    if all(check):
+    	print("Pythonic way of checking conditions")
+
+    if any(check):
+    	print("Pythonic way of checking any one condition")
+
+    # Tip 3: swapping in python
+
+    # Traditional approach
+
+    x = "tip1"
+    y = 'tip2'
+
+    temp = x
+    x = y
+    y = temp
+
+    print(x,y)
+
+    # Pythonic way
+    x = 'tip3'
+    y = 'tip4'
+    x,y = y,x
+    print(x,y)
+
+    # Tip 4: Removing duplicates
+
+    # Traditional approach - with out list comprehension
+    numbers = [1,2,1,3,4,2,1,2,5,67,2,3,56,78,34,12,3,4,5,6,7,8]
+    result = []
+    for num in numbers:
+    	if num not in result:
+    		result.append(num)
+    print("final list is :" + str(result))
+
+    # with list comprehension
+    resultComp = []
+    [resultComp.append(num) for num in numbers if num not in resultComp]
+    print("final list using comprehension:" + str(resultComp))
+
+    # Pythonic way
+
+    # Using set
+    resultSet = list(set(numbers))
+    repeatedNumbers = max(set(numbers), key=numbers.count)
+    print("Using set final list is :" + str(resultSet))
+    print("Most repeated is :", repeatedNumbers)
+
+    # Using Dictionary
+    resultDict = list(dict.fromkeys(numbers))
+    repeatedNumbers = max(dict.fromkeys(numbers), key=numbers.count)
+    print("Most repeated is :", repeatedNumbers)
+    print("Using dictionary final list is :" + str(resultDict))
+
+    # Tip 5: Call by Reference
+
+    # Traditional way of implementing the sum function
+    def finalString(x,y):
+    	return x + y
+    print(finalString('Python is very simple',' to learn'))
+
+    # Using Pythonic way
+
+    def finalString1(*x):
+    	result = ''
+    	for s in x:
+    		result += s
+    	return result
+
+    print(finalString1('Python is very simple', ' to learn', ' and can be used \
+    in', ' Test Automation, Machine learning, Data Science, Web', \
+    'desktop apps development.'))
+
+    # Tip 6: Reverse String
+
+    # Traditional approach
+    s = 'python is fun to learn'
+    print(s[::-1])
+
+    # Pythonic way
+    s = 'python is fun to learn'[::-1]
+    print(s)
+
+    # Tip 7: Palidrome
+
+    checkString = input("Enter the string value :")
+    result = checkString.find(checkString[::-1])==0
+    if result:
+    	print("String is Palindrome " + str(result))
+    else:
+    	print("Not Palindrome")
+    ```
